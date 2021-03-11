@@ -42,7 +42,7 @@
                      <label for="pass2">Quel Categorie ? :</label>
                   </td>
                   <td>
-                     <input type="text" placeholder="exemple : Voiture" id="id_categorie" name="id_categorie" class="box-input" />
+                     <input type="text" placeholder="exemple : Voiture" id="id_categorie" name="id_categorie" class="box-input"/>
                   </td>
                </tr>
                <tr>

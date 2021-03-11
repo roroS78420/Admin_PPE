@@ -15,4 +15,14 @@ function insertProduit($nom_produit, $p_motscles, $description, $prix, $id_categ
 	return $insertion->execute();
 }
 
+function selectAllcategorie(){
+	global $bdd;
+	$req = "SELECT * FROM categorie";
+
+	$res = $bdd -> query($req);
+
+	$leslignes = $res->FetchAll();
+
+		return $leslignes;
+}
 ?>

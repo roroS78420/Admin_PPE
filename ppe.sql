@@ -1,20 +1,19 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.1
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le :  jeu. 11 mars 2021 à 15:03
--- Version du serveur :  10.4.8-MariaDB
--- Version de PHP :  7.3.10
+-- Généré le : sam. 06 mars 2021 à 00:36
+-- Version du serveur :  10.4.14-MariaDB
+-- Version de PHP : 7.4.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
 DROP DATABASE IF EXISTS ppe;
 CREATE DATABASE ppe;
-use ppe;
+USE ppe;
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -23,29 +22,8 @@ use ppe;
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données :  `ppe`
+-- Base de données : `ppe`
 --
-
--- --------------------------------------------------------
-
---
--- Structure de la table `admin`
---
-
-CREATE TABLE `admin` (
-  `id` int(11) NOT NULL,
-  `username` varchar(255) NOT NULL,
-  `email` varchar(128) NOT NULL,
-  `pass` varchar(40) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Déchargement des données de la table `admin`
---
-
-INSERT INTO `admin` (`id`, `username`, `email`, `pass`) VALUES
-(1, 'admin', 'admin@admin.com', 'd033e22ae348aeb5660fc2140aec35850c4da997'),
-(2, 'Adrien', 'ad.dela75020@gmail.com', '4f9996ad3b634ef65d772b702509236456662a35');
 
 -- --------------------------------------------------------
 
@@ -97,9 +75,7 @@ CREATE TABLE `image` (
 
 INSERT INTO `image` (`id_image`, `nom_image`) VALUES
 (1, 'moteurAudi.jpg'),
-(2, 'retro.jpg'),
-(3, ''),
-(4, 'volantGT.jpg');
+(2, 'retro.jpg');
 
 -- --------------------------------------------------------
 
@@ -123,8 +99,7 @@ CREATE TABLE `produit` (
 
 INSERT INTO `produit` (`id_produit`, `nom_produit`, `p_motscles`, `description`, `prix`, `id_categorie`, `id_image`) VALUES
 (1, 'Moteur de Voiture Audi A3', 'Moteur;Voiture;Audi;A3;', 'Ceci est un moteur blablabla ', 799, 1, 1),
-(2, 'Rétroviseur Renault ', '', 'Rétroviseur de la marque Renault avec une tes grande flexibilité ', 39, 2, 2),
-(7, 'Volant voiture GT', 'volant, GT, gt, ', 'Volant de Voiture GT tres ergonomique', 60, 1, 4);
+(2, 'Rétroviseur Renault ', '', 'Rétroviseur de la marque Renault avec une tes grande flexibilité ', 39, 2, 2);
 
 -- --------------------------------------------------------
 
@@ -151,18 +126,11 @@ INSERT INTO `users` (`id`, `username`, `tel`, `adresse`, `email`, `pass`, `lvl`)
 (2, 'Adrien', 0, '', 'ad.dela75020@gmail.com', '4493b1a16b57a2f7a66df59c1ab825911f69562d', 0),
 (4, 'Adrien', 0, '', 'momo@yahoo.com', '52036e5a96b401419e3b870bb3859828b111afd2', 0),
 (5, 'Adrien75020', 0, '', 'ad.delacroix@hotmail.com', '52036e5a96b401419e3b870bb3859828b111afd2', 0),
-(6, 'Adrien', 0, '', 'admin@portfolio.com', '52036e5a96b401419e3b870bb3859828b111afd2', 0),
-(7, 'pocoloco', 788312454, 'Mark Lavoine', 'mama@gmail.com', '52036e5a96b401419e3b870bb3859828b111afd2', 0);
+(6, 'Adrien', 0, '', 'admin@portfolio.com', '52036e5a96b401419e3b870bb3859828b111afd2', 0);
 
 --
 -- Index pour les tables déchargées
 --
-
---
--- Index pour la table `admin`
---
-ALTER TABLE `admin`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Index pour la table `categorie`
@@ -202,12 +170,6 @@ ALTER TABLE `users`
 --
 
 --
--- AUTO_INCREMENT pour la table `admin`
---
-ALTER TABLE `admin`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
 -- AUTO_INCREMENT pour la table `categorie`
 --
 ALTER TABLE `categorie`
@@ -223,19 +185,19 @@ ALTER TABLE `commande`
 -- AUTO_INCREMENT pour la table `image`
 --
 ALTER TABLE `image`
-  MODIFY `id_image` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_image` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT pour la table `produit`
 --
 ALTER TABLE `produit`
-  MODIFY `id_produit` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_produit` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Contraintes pour les tables déchargées

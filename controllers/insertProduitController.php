@@ -16,6 +16,11 @@
                    } 
     }
 
+    /*$lescategorie = selectAllcategorie();
+      foreach ($lescategorie as $unecategorie) {
+      echo "<option value ='".$unecategorie['id_categorie']."'>".$unecategorie['nom_categorie']."</option>";
+      } */
+
 
   require "views/insertProduitView.php";
 ?>
