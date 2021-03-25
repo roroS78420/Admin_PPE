@@ -14,7 +14,8 @@
     <table class="table text-center">
       <thead>
           <tr>
-              <th scope="col">Adresse</th>
+              <th scope="col">id</th>
+              <th scope="col">nom</th>
               <th scope="col">Mail</th>
               <th scope="col">Adresse</th>
               <th scope="col">Téléphone</th>
@@ -22,46 +23,43 @@
           </tr>
       </thead>
       <tbody>
+      
         <?php
         $view = $bdd->query("SELECT * FROM users");
         if ($view->rowCount() == 0) { ?>
           <tr>
             <td colspan="3">Aucun utilisateurs trouvé dans la basse de données</td>
           </tr>
-        <?php } elseif (isset($_GET['edit'])) { 
-        while ($donnees = $view->fetch()) { ?>
-          <tr>
-            <form method="post" action="">
-              <td>
-                <input type="text" name="username" class="form-control" value="<?= $donnees['username'] ?>">
-              </td>
-              <td>
-                <input type="text" name="email" class="form-control" value="<?= $donnees['email'] ?>">
-              </td>
-              <td>
-                <button type='submit' name='retour' class='btn btn-primary' style='background-color: red; border-color: red;'>
-                  X
-                </button>
-              </td>
-            </form>
-          </tr>
-        <?php } ?>
+         
         <?php } else {
           while ($donnees = $view->fetch()) {
         ?>
         <tr>
+          <td><?= $donnees['id'] ?></td>
           <td><?= $donnees['username'] ?></td>
           <td><?= $donnees['email'] ?></td>
           <td><?= $donnees['adresse'] ?></td>
           <td><?= $donnees['tel'] ?></td>
           <td class="table-action">
-            <a class="btn btn-danger active fw-bold" href="admin&id=<?= $donnees['id'] ?>" onclick="return(confirm('Voulez-vous vraiment supprimer cette élève ?'));">
+            <a class="btn btn-danger active fw-bold" href="utilisateur&id=<?= $donnees['id'] ?>" onclick="return(confirm('Voulez-vous vraiment supprimer cette élève ?'));">
               Supprimer
             </a>
           </td>
         </tr>
         <?php } ?>
         <?php } ?>
+        <?php 
+        error_reporting(E_ALL);
+        ini_set('display_errors', TRUE);
+        ini_set('display_startup_errors', TRUE);
+      if(isset($_GET["id"]) AND !empty($_GET['id'])){
+        $supprime = (int) $_GET['id'];
+      $req = $bdd->prepare('DELETE FROM users WHERE id = ?');
+      $req->execute(array($supprime));
+          header("location: utilisateur");
+        }
+      
+      ?>
       </tbody>
     </table>
   </div>
