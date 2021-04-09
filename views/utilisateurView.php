@@ -41,7 +41,7 @@
           <td><?= $donnees['adresse'] ?></td>
           <td><?= $donnees['tel'] ?></td>
           <td class="table-action">
-            <a class="btn btn-danger active fw-bold" href="utilisateur&id=<?= $donnees['id'] ?>" onclick="return(confirm('Voulez-vous vraiment supprimer cette élève ?'));">
+            <a class="btn btn-danger active fw-bold" href="utilisateur&id=<?= $donnees['id'] ?>" onclick="return(confirm('Voulez-vous vraiment supprimer cette utilisateur ?'));">
               Supprimer
             </a>
           </td>
