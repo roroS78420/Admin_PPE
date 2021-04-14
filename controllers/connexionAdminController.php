@@ -17,6 +17,7 @@ if (isset($_POST['formconnexion'])) {
                     $_SESSION['username'] = $requete['username'];
                     $_SESSION['email'] = $requete['email'];
                     $_SESSION['pass'] = $requete['pass'];
+                    $_SESSION['lvl'] = 2;
                     header('Location: homeAdmin');
                 
             } else {
