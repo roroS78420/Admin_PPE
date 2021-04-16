@@ -20,7 +20,7 @@ function auth($lvl){// fonction qui controle si le lvl de l utilisateur est suff
     if(isset($_SESSION['lvl']) && $_SESSION['lvl'] >= $lvl)
         return true;
     else
-        header("Location:login");
+        header("Location:connexionAdmin");
 }
 
 

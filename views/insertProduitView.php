@@ -1,3 +1,4 @@
+<?php auth(2); ?>
   <body>
        <div class="row d-flex justify-content-center">
         <div class="col-sm-8 col-md-7 py-4">

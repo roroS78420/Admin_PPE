@@ -1,3 +1,4 @@
+<?php auth(2); ?>
 <section class="py-5 text-center container bg">
     <div class="row py-lg-5">
       <div class="col-lg-6 col-md-8 mx-auto">
